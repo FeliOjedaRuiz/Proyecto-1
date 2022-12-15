@@ -5,10 +5,15 @@ class Gamepvp {
     this.sky = new Sky(ctx)
     this.mountains = new Mountains(ctx)
     this.player = new Player(ctx)
+    this.audio = new Audio("src/Battlefield.mp3")
+    this.audio.volume = 0.02
+
   }
 
   start() {
+    
     this.initListeners()
+    this.audio.play()
 
     this.interval = setInterval(() => {
       this.clear()

@@ -13,6 +13,7 @@ game.start()
 
 pvpbtn.onclick = () => {
 
+  
     
 }
 

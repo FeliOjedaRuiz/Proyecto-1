@@ -13,11 +13,14 @@ class Player {
     this.ay = 0.5
 
     this.img = new Image()
-    this.img.src = "src/pikachuWalkRigth2.png"
+    this.img.src = "src/pikachuWalkRight.png"
     this.img.frames = 4
     this.img.frameIndex = 
     this.tick = 0
+    this.walkSide = "right" 
 
+    this.rays = []
+    
   }
 
   draw() {
@@ -33,6 +36,8 @@ class Player {
       this.h,
     )
 
+    this.rays.forEach(r => r.draw())
+
     this.animate()
 
   }
@@ -40,7 +45,7 @@ class Player {
   animate() {
     this.tick++
 
-    if (this.tick > 15) {
+    if (this.tick > 10) {
       this.tick = 0;
       this.img.frameIndex++
 
@@ -71,6 +76,8 @@ class Player {
       this.x = this.ctx.canvas.width - this.w - 30
     }
 
+    this.rays.forEach(r => r.move())
+
   }
 
   jump(){
@@ -80,17 +87,33 @@ class Player {
   }
 
   shoot(){
-
+    if (this.walkSide === "right") {
+      const x = this.x + this.w
+      const y = this.y + this.h/2
+      const vx = 20
+      const ray = new Ray(this.ctx, x, y, vx)
+      this.rays.push(ray)
+    } else if (this.walkSide === "left") {
+      const x = this.x
+      const y = this.y + this.h/2
+      const vx = -20
+      const ray = new Ray(this.ctx, x, y, vx)
+      this.rays.push(ray)
+    }
+      
   }
 
   onKeyDown(key) {
     switch(key) {
       case RIGHT:
-        this.img.src = "src/pikachuWalkRigth2.png"
+        this.img.src = "src/pikachuWalkRight.png"
+        this.walkSide = "right"
         this.vx = 4
         break;
       case LEFT:
-        this.img.src = "src/pikachuWalkLeft2.png"
+        this.img.src = "src/pikachuWalkLeft.png"
+        this.walkSide = "left"
+        console.log(this.walkSide)
         this.vx = -4
         break;
       case UP:
@@ -98,6 +121,7 @@ class Player {
         break;
       case SPACE:
         this.shoot()
+        break;
        
     }
   }
