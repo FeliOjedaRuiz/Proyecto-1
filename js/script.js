@@ -6,14 +6,22 @@ const game = new Gamepvp(ctx)
 
 
 const pvpbtn = document.getElementById("start-btn")
+const stopbtn = document.getElementById("stop-btn")
 
-canvas.style.display = 'block'
-game.start()
+
+
 
 
 pvpbtn.onclick = () => {
 
+  canvas.style.display = 'block'
+  game.start()
   
+    
+}
+
+stopbtn.onclick = () => {
+  game.stop()  
     
 }
 

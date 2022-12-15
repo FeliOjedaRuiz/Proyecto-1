@@ -4,14 +4,17 @@ class Gamepvp {
     this.interval = null
     this.sky = new Sky(ctx)
     this.mountains = new Mountains(ctx)
-    this.player = new Player(ctx)
+    this.pikachu = new Pikachu(ctx)
+    this.charmander = new Charmander(ctx)
+    this.rays = []
+
     this.audio = new Audio("src/Battlefield.mp3")
     this.audio.volume = 0.02
 
   }
 
   start() {
-    
+    this.stop()    
     this.initListeners()
     this.audio.play()
 
@@ -26,33 +29,46 @@ class Gamepvp {
   draw() {
     this.sky.draw()
     this.mountains.draw()
-    this.player.draw()
+    this.pikachu.draw()
+    this.charmander.draw()
 
   }
 
   move() {
     this.sky.move()
     this.mountains.move()
-    this.player.move()
+    this.pikachu.move()
+    this.charmander.move()
 
     }
 
   initListeners() {
     document.onkeydown = (e) => {
-      this.player.onKeyDown(e.keyCode)
+      this.pikachu.onKeyDown(e.keyCode)
+      this.charmander.onKeyDown(e.keyCode)
     }
 
     document.onkeyup = (e) => {
-      this.player.onKeyUp(e.keyCode)
+      this.pikachu.onKeyUp(e.keyCode)
+      this.charmander.onKeyUp(e.keyCode)
     }
+
+    
   }
 
   stop() {
-
+    this.audio.pause()
+    clearInterval(this.interval)
   }
 
   clear() {
-
+    this.rays = this.rays.filter(r => r.isVisible())
+    this.ctx.clearRect(
+      0,
+      0,
+      this.ctx.canvas.width,
+      this.ctx.canvas.heigth,
+    )
   }
 
   checkCollisions() {

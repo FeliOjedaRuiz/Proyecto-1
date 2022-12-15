@@ -1,4 +1,4 @@
-class Player {
+class Pikachu {
   constructor(ctx) {
     this.ctx = ctx
 
@@ -13,7 +13,7 @@ class Player {
     this.ay = 0.5
 
     this.img = new Image()
-    this.img.src = "src/pikachuWalkRight.png"
+    this.img.src = "src/pikachuStandsRight.png"
     this.img.frames = 4
     this.img.frameIndex = 
     this.tick = 0
@@ -106,6 +106,7 @@ class Player {
   onKeyDown(key) {
     switch(key) {
       case RIGHT:
+        console.log("Derecha")
         this.img.src = "src/pikachuWalkRight.png"
         this.walkSide = "right"
         this.vx = 4
@@ -113,13 +114,12 @@ class Player {
       case LEFT:
         this.img.src = "src/pikachuWalkLeft.png"
         this.walkSide = "left"
-        console.log(this.walkSide)
         this.vx = -4
         break;
       case UP:
         this.jump();
         break;
-      case SPACE:
+      case CTRLR:
         this.shoot()
         break;
        
@@ -129,8 +129,12 @@ class Player {
   onKeyUp(key) {
     switch(key) {
       case RIGHT:
+        this.vx = 0
+        this.img.src = "src/PikachuStandsRight.png"
+        break;
       case LEFT:
         this.vx = 0
+        this.img.src = "src/PikachuStandsLeft.png"
         break;
     }
   }

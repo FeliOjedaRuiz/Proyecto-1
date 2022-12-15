@@ -60,5 +60,9 @@ class Ray {
     }
   }
 
+  isVisible() {
+    return this.x + this.w >= 0 && this.x <= this.ctx.canvas.width
+  }
+
 
 }
