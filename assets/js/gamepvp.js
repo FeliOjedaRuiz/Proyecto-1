@@ -9,10 +9,8 @@ class Gamepvp {
     this.player1 = new Player1(ctx)
     this.player2 = new Player2(ctx)
 
-
     this.audio = new Audio("assets/audios/battlefield.mp3")
-    this.audio.volume = 0.1
-
+    this.audio.volume = 0.04
   }
 
   start() {
@@ -82,8 +80,8 @@ class Gamepvp {
 
     this.player1.isCollided(this.player2)
     this.player2.isCollided(this.player1)
-    this.player1.isHited(this.player2)
-    this.player2.isHited(this.player1)
+    this.player1.isInRange(this.player2)
+    this.player2.isInRange(this.player1)
 
     // const p1 = this.player1    
     // this.player2.shootsImpacted = this.player2.shoots.filter( s => {

@@ -22,8 +22,8 @@ class Player2 {
     this.tick = 0
     this.shootTime = 0
     this.punchTime = 0
-    this.hitedRange = "outOfRange"
-
+    this.punchit = 0
+    
     this.walkSide = "left"    
     this.wrimage = "assets/images/characters/pikachuWalkRight.png"
     this.wlimage = "assets/images/characters/pikachuWalkLeft.png"
@@ -156,6 +156,7 @@ class Player2 {
 
   punch() {
     this.punchTime = 10
+    this.punchit = 1
   }
 
   clear() {
@@ -185,15 +186,29 @@ class Player2 {
     })
   }
 
-  isHited(player1){ 
+  isInRange(player1){ 
     const p1 = player1
-    if (this.walkSide === "left"){
-      // if ((this.x + this.w) >= p1.x + p1.w && (p1.x <= this.x + this.w && (p1.y + p1.h) >= this.y && (this.y + this.h) >= p1.y)) {
-      //   console.log("range")
-      //   this.hitedRange = "inRange"
-      // }
-    }
-    
+    if (this.walkSide === "right"){
+      if ((p1.x) >= this.x && (this.x + this.w + 20) >= p1.x
+      && (this.y + this.h) >= p1.y && this.y <= (p1.y + p1.h) && this.punchit === 1) {
+        this.punchit = 0
+        p1.energy-=10
+        p1.x += 10
+        p1.y -= 10    
+      } else {
+        this.punchit = 0
+      }
+    } else if (this.walkSide === "left"){
+      if ((p1.x + p1.w) >= this.x -20 && (this.x) >= p1.x
+      && (this.y + this.h) >= p1.y && this.y <= (p1.y + p1.h) && this.punchit === 1) {
+        this.punchit = 0
+        p1.energy-=10
+        p1.x -= 10
+        p1.y -= 10         
+      } else {
+        this.punchit = 0
+      }
+    }    
   }
 
   onKeyDown(key) {
@@ -233,7 +248,7 @@ class Player2 {
         }
         break;
       case DOWN:
-        this.punch()
+        this.punch()        
         break;
     }
   }
