@@ -13,11 +13,11 @@ class Charmander {
       this.ay = 0.5
   
       this.img = new Image()
-      this.img.src = "src/pikachuStandsLeft.png"
+      this.img.src = "assets/images/characters/pikachuStandsLeft.png"
       this.img.frames = 4
       this.img.frameIndex = 
       this.tick = 0
-      this.walkSide = "right" 
+      this.walkSide = "left" 
   
       this.flames = []
       
@@ -100,18 +100,17 @@ class Charmander {
         const flame = new Flame(this.ctx, x, y, vx)
         this.flames.push(flame)
       }
-        
     }
   
     onKeyDown(key) {
       switch(key) {
         case D:
-          this.img.src = "src/pikachuWalkRight.png"
+          this.img.src = "assets/images/characters/pikachuWalkRight.png"
           this.walkSide = "right"
           this.vx = 4
           break;
         case A:
-          this.img.src = "src/pikachuWalkLeft.png"
+          this.img.src = "assets/images/characters/pikachuWalkLeft.png"
           this.walkSide = "left"
           this.vx = -4
           break;
@@ -129,11 +128,11 @@ class Charmander {
       switch(key) {
         case D:
           this.vx = 0
-          this.img.src = "src/pikachuStandsRight.png"
+          this.img.src = "assets/images/characters/pikachuStandsRight.png"
           break;
         case A:
           this.vx = 0
-          this.img.src = "src/pikachuStandsLeft.png"
+          this.img.src = "assets/images/characters/pikachuStandsLeft.png"
           break;
       }
     }

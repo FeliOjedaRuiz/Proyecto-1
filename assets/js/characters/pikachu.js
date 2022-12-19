@@ -12,8 +12,10 @@ class Pikachu {
     this.ax = 0
     this.ay = 0.5
 
+    this.energy = 5
+
     this.img = new Image()
-    this.img.src = "src/pikachuStandsRight.png"
+    this.img.src = "assets/images/characters/pikachuStandsRight.png"
     this.img.frames = 4
     this.img.frameIndex = 
     this.tick = 0
@@ -107,19 +109,19 @@ class Pikachu {
     switch(key) {
       case RIGHT:
         console.log("Derecha")
-        this.img.src = "src/pikachuWalkRight.png"
+        this.img.src = "assets/images/characters/pikachuWalkRight.png"
         this.walkSide = "right"
         this.vx = 4
         break;
       case LEFT:
-        this.img.src = "src/pikachuWalkLeft.png"
+        this.img.src = "assets/images/characters/pikachuWalkLeft.png"
         this.walkSide = "left"
         this.vx = -4
         break;
       case UP:
         this.jump();
         break;
-      case CTRLR:
+      case FIN:
         this.shoot()
         break;
        
@@ -130,14 +132,13 @@ class Pikachu {
     switch(key) {
       case RIGHT:
         this.vx = 0
-        this.img.src = "src/PikachuStandsRight.png"
+        this.img.src = "assets/images/characters/PikachuStandsRight.png"
         break;
       case LEFT:
         this.vx = 0
-        this.img.src = "src/PikachuStandsLeft.png"
+        this.img.src = "assets/images/characters/PikachuStandsLeft.png"
         break;
     }
   }
-
-
+  
 }

@@ -1,4 +1,4 @@
-class Ray {
+class Shoot {
   constructor(ctx, x, y, vx) {
     this.ctx = ctx
 
@@ -12,7 +12,7 @@ class Ray {
     this.ay = 0
 
     this.img = new Image()
-    this.img.src = "src/rayobicolor.png"
+    this.img.src = "assets/images/characters/shoots/bicolorray.png"
     this.img.frames = 2
     this.img.frameIndex = 0
     this.tick = 0

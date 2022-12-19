@@ -10,7 +10,7 @@ class Mountains {
         this.vy = 0
 
         this.mountains = new Image()
-        this.mountains.src = "src/mountains.png"  
+        this.mountains.src = "assets/images/backgrounds/mountains.png"  
         
     }
 

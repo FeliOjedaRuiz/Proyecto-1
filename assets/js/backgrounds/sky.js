@@ -10,7 +10,7 @@ class Sky {
         this.vy = 0
 
         this.sky = new Image()
-        this.sky.src = "src/sky.jpg"
+        this.sky.src = "assets/images/backgrounds/sky.jpg"
                 
     }
 
