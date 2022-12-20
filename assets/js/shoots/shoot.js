@@ -33,7 +33,6 @@ class Shoot {
     )
 
     this.animate()
-
   }
 
   move() {

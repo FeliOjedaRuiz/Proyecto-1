@@ -1,5 +1,4 @@
-canvas {
-    
+canvas {    
     border-radius: 7px;
     margin: 0 auto;
     display: none;
@@ -11,12 +10,31 @@ canvas {
     display: flex;
     justify-content: center;
   }
-
-  div {
+  
+  .selectionScreen {
+    width: 720px;
+    height: 360px;
+    background-color: aqua;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+  }
+
+  .playerSelection {  
+    background-color: blueviolet;
+    width: 720px;  
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .charImage {
+    width: 120px;
+  }
+
+  h2 {
+    text-align: center;
   }
 
   h1 {

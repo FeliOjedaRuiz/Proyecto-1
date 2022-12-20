@@ -10,13 +10,14 @@ class Gamepvp {
     this.player2 = new Player2(ctx)
 
     this.audio = new Audio("assets/audios/battlefield.mp3")
-    this.audio.volume = 0.04
+    this.audio.volume = 0.01
+  
   }
 
   start() {
     this.stop()
-    this.initListeners()
     this.audio.play()
+    this.initListeners()
 
     this.interval = setInterval(() => {
       this.clear()
@@ -24,7 +25,6 @@ class Gamepvp {
       this.move()
       this.checkColisions()
       this.playerWin()
-
     }, 1000 / 60)
   }
 
@@ -33,7 +33,6 @@ class Gamepvp {
     this.mountains.draw()
     this.player1.draw()
     this.player2.draw()
-
   }
 
   move() {
@@ -41,7 +40,6 @@ class Gamepvp {
     this.mountains.move()
     this.player1.move()
     this.player2.move()
-
   }
 
   initListeners() {
@@ -55,7 +53,6 @@ class Gamepvp {
       this.player2.onKeyUp(e.keyCode)
     }
 
-
   }
 
   stop() {
@@ -64,33 +61,15 @@ class Gamepvp {
   }
 
   clear() {
-    /*this.rays = this.rays.filter(r => r.isVisible())
-    this.ctx.clearRect(
-      0,
-      0,
-      this.ctx.canvas.width,
-      this.ctx.canvas.heigth,
-    )*/
-
-
-
+    this.player1.clear()
+    this.player2.clear()
   }
 
   checkColisions() {
-
     this.player1.isCollided(this.player2)
     this.player2.isCollided(this.player1)
     this.player1.isInRange(this.player2)
     this.player2.isInRange(this.player1)
-
-    // const p1 = this.player1    
-    // this.player2.shootsImpacted = this.player2.shoots.filter( s => {
-    //   if ((p1.x + p1.w) >= s.x && (s.x + s.w) >= p1.x && (s.y + s.h) >= p1.y && (p1.y + p1.h) >= s.y) {
-    //     this.player1.energy--
-    //     console.log(this.player2.shootsImpacted)
-    //   }
-    // })
-
   }
 
 
@@ -110,8 +89,6 @@ class Gamepvp {
       this.ctx.fillText("¡Player 1 Win!", 165, this.ctx.canvas.height/2)
       this.stop()
     }
-
-
   }
 
 }

@@ -10,15 +10,39 @@
 </head>
 
 <body>
-  <div>
+  <div class="gameContainer" id="gameContainer">
     <h1>THE SUPER SMASH GAME</h1>
     <canvas id="canvaspvp" width="720" height="360"></canvas>
-    <button id="start-btn" class="start-btn">START PVP</button>
+
+    <div class="selectionScreen" id="selectionScreen">
+      <h2>Player 1 select character</h2>
+      <div class="playerSelection" id="playerSelection">
+        <div class="char1" id="char1">
+          <h2>Pikachu</h2>
+          <img class="charImage" src="assets/images/userx.png" alt="char1">
+        </div>
+        <div class="char2" id="char2">
+          <h2>Pikachu</h2>
+          <img class="charImage" src="assets/images/userx.png" alt="char2">
+        </div>
+        <div class="char3" id="char3">
+          <h2>Pikachu</h2>
+          <img class="charImage" src="assets/images/userx.png" alt="char3">
+        </div>
+        <div class="char4" id="char4">
+          <h2>Pikachu</h2>
+          <img class="charImage" src="assets/images/userx.png" alt="char4">
+        </div>
+      </div>
+      <button id="start-btn" class="start-btn">START PVP</button>
+    </div>
+    
+    
+    
     <button id="stop-btn" class="stop-btn">STOP</button>
   </div>
   <script src="assets/js/constants.js"></script>
   <script src="assets/js/shoots/shoot.js"></script>
-  <script src="assets/js/shoots/flame.js"></script>
   <script src="assets/js/characters/charmander.js"></script>
   <script src="assets/js/player1.js"></script>
   <script src="assets/js/player2 .js"></script>

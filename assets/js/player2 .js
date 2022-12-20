@@ -160,7 +160,7 @@ class Player2 {
   }
 
   clear() {
-
+    this.shoots = this.shoots.filter(s => s.isVisible())
   }
 
   isCollided(player1) {

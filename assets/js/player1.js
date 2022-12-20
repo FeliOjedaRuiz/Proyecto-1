@@ -5,6 +5,8 @@ class Player1 {
     this.x = 60
     this.y = 150
     this.floor = 250
+    this.char = ""
+
     this.w = 26 * 2
     this.h = 29 * 2
     this.vx = 0
@@ -155,7 +157,7 @@ class Player1 {
   }
 
   clear() {
-
+    this.shoots = this.shoots.filter(s => s.isVisible())
   }
 
   isCollided(player2) {
