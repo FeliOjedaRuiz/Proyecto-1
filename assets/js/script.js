@@ -14,7 +14,9 @@ const char4 = document.getElementById("char4")
 
 
 char1.onclick = () =>{
-
+  game.p1 = "Pikachu"
+  game.charDefine()
+  //game.player1.char = "Pikachu"
 }
 
 

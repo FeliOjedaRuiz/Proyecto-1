@@ -1,5 +1,5 @@
 class Shoot {
-  constructor(ctx, x, y, vx) {
+  constructor(ctx, x, y, vx, imgsrc) {
     this.ctx = ctx
 
     this.x = x
@@ -12,7 +12,7 @@ class Shoot {
     this.ay = 0
 
     this.img = new Image()
-    this.img.src = "assets/images/characters/shoots/bicolorray.png"
+    this.img.src = imgsrc
     this.img.frames = 2
     this.img.frameIndex = 0
     this.tick = 0

@@ -6,12 +6,19 @@ class Gamepvp {
     this.ctx.imageSmoothingEnabled = false;
     this.sky = new Sky(ctx)
     this.mountains = new Mountains(ctx)
-    this.player1 = new Player1(ctx)
-    this.player2 = new Player2(ctx)
+    this.player1 =
+    this.player2 = 
 
     this.audio = new Audio("assets/audios/battlefield.mp3")
     this.audio.volume = 0.01
   
+  }
+
+  charDefine() {
+    if (this.p1 === "Pikachu"){
+      this.player1 = new Player1(ctx, (new Pikachu(ctx)))
+      this.player2 = new Player2(ctx, (new Pikachu(ctx)))
+    }
   }
 
   start() {
