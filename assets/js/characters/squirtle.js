@@ -1,13 +1,13 @@
-class Pikachu {
+class Squirtle {
   constructor(ctx) {
     this.ctx = ctx
-    this.name = "Pichaku"
+    this.name = "Skuaru"
     this.w = 26 * 2
     this.h = 29 * 2
-    this.velocity = 5
-    this.totalEnergy = 200
-    this.energy = 200
-    this.jumpForce = 10
+    this.velocity = 4
+    this.totalEnergy = 250
+    this.energy = 250
+    this.jumpForce = 8
 
     this.img = "assets/images/characters/pikachuStandsRight.png"
     this.imgframes = 4    
@@ -19,13 +19,13 @@ class Pikachu {
 
     this.punchImage = new Image()
     this.punchImage.src = ""
-    this.punchPower = 8
+    this.punchPower = 9
 
     this.shootImage = "assets/images/characters/shoots/bicolorray.png"
     this.shootAudio = new Audio("assets/audios/rayShoot.mp3")
     this.shootAudio.volume = 0.01
-    this.shootVel = 25
-    this.shootPower = 1.5
+    this.shootVel = 18
+    this.shootPower = 1
   }
 
 }

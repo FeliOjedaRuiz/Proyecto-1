@@ -144,15 +144,15 @@ class Player2 {
 
   isCollided(player1) {
     const p1 = player1
-    p1.shoots..forEach(s => {
+    p1.shoots.forEach(s => {
       if (s && (this.x + this.char.w) >= s.x && (s.x + s.w) >= this.x && (s.y + s.h) >= this.y && (this.y + this.char.h) >= s.y) {
         this.char.energy -= p1.char.shootPower
         if (player1.walkSide === "right") {
-          this.x += p2.char.shootPower * 3
-          this.y -= p2.char.shootPower * 3
+          this.x += p1.char.shootPower * 3
+          this.y -= p1.char.shootPower * 3
         } else if (player1.walkSide === "left") {
-          this.x -= p2.char.shootPower * 3
-          this.y -= p2.char.shootPower * 3
+          this.x -= p1.char.shootPower * 3
+          this.y -= p1.char.shootPower * 3
         }
         this.ctx.drawImage(
           this.injuredImage,
@@ -173,7 +173,7 @@ class Player2 {
         this.punchit = 0
         p1.char.energy -= this.char.punchPower  
         p1.x += this.char.punchPower  
-        p2.y -= this.char.punchPower      
+        p1.y -= this.char.punchPower      
       } else {
         this.punchit = 0
       }
@@ -195,12 +195,12 @@ class Player2 {
       case RIGHT:
         this.img.src = `${this.char.wrimage}`
         this.walkSide = "right"
-        this.vx = this.charIs.velocity
+        this.vx = this.char.velocity
         break;
       case LEFT:
         this.img.src = `${this.char.wlimage}`
         this.walkSide = "left"
-        this.vx = -this.charIs.velocity
+        this.vx = -this.char.velocity
         break;
       case UP:
         this.jump();

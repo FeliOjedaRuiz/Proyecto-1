@@ -7,7 +7,9 @@ class Gamepvp {
     this.sky = new Sky(ctx)
     this.mountains = new Mountains(ctx)
     this.player1 =
-    this.player2 = 
+    this.player2 =
+    this.p1 = ""
+    this.p2 = ""
 
     this.audio = new Audio("assets/audios/battlefield.mp3")
     this.audio.volume = 0.01
@@ -17,7 +19,21 @@ class Gamepvp {
   charDefine() {
     if (this.p1 === "Pikachu"){
       this.player1 = new Player1(ctx, (new Pikachu(ctx)))
+    } else if (this.p1 === "Bulbasaur"){
+      this.player1 = new Player1(ctx, (new Bulbasaur(ctx)))
+    } else if (this.p1 === "Charmander"){
+      this.player1 = new Player1(ctx, (new Charmander(ctx)))
+    } else if (this.p1 === "Squirtle"){
+      this.player1 = new Player1(ctx, (new Squirtle(ctx)))
+    }
+    if (this.p2 === "Pikachu"){
       this.player2 = new Player2(ctx, (new Pikachu(ctx)))
+    } else if (this.p2 === "Bulbasaur"){
+      this.player2 = new Player2(ctx, (new Bulbasaur(ctx)))
+    } else if (this.p2 === "Charmander"){
+      this.player2 = new Player2(ctx, (new Charmander(ctx)))
+    } else if (this.p2 === "Squirtle"){
+      this.player2 = new Player2(ctx, (new Squirtle(ctx)))
     }
   }
 
@@ -68,8 +84,7 @@ class Gamepvp {
   }
 
   clear() {
-    this.player1.clear()
-    this.player2.clear()
+    
   }
 
   checkColisions() {
@@ -81,19 +96,19 @@ class Gamepvp {
 
 
   playerWin() {
-    if (this.player1.energy <= 0) {
+    if (this.player1.char.energy <= 0) {
       this.ctx.fillStyle = "#00000080"
       this.ctx.fillRect(0, 0, this.ctx.canvas.width, this.ctx.canvas.height)
       this.ctx.fillStyle = "#000000"
       this.ctx.font="40pt Arial Black, bold"
-      this.ctx.fillText("¡Player 2 Win!", 165, this.ctx.canvas.height/2)
+      this.ctx.fillText(`${this.char.name} win!!!`, 165, this.ctx.canvas.height/2)
       this.stop()
-    } else if (this.player2.energy <= 0) {
+    } else if (this.player2.char.energy <= 0) {
       this.ctx.fillStyle = "#00000080"
       this.ctx.fillRect(0, 0, this.ctx.canvas.width, this.ctx.canvas.height)
       this.ctx.fillStyle = "#000000"
       this.ctx.font="40pt Arial Black, bold"
-      this.ctx.fillText("¡Player 1 Win!", 165, this.ctx.canvas.height/2)
+      this.ctx.fillText(`${this.char.name} win!!!`, 165, this.ctx.canvas.height/2)
       this.stop()
     }
   }
