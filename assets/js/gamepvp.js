@@ -97,18 +97,18 @@ class Gamepvp {
 
   playerWin() {
     if (this.player1.char.energy <= 0) {
-      this.ctx.fillStyle = "#00000080"
+      this.ctx.fillStyle = "#FDFEFE80"
       this.ctx.fillRect(0, 0, this.ctx.canvas.width, this.ctx.canvas.height)
       this.ctx.fillStyle = "#000000"
       this.ctx.font="40pt Arial Black, bold"
-      this.ctx.fillText(`${this.char.name} win!!!`, 165, this.ctx.canvas.height/2)
+      this.ctx.fillText(`PLAYER 2 WINS!!!`, 290, this.ctx.canvas.height/2)
       this.stop()
     } else if (this.player2.char.energy <= 0) {
-      this.ctx.fillStyle = "#00000080"
+      this.ctx.fillStyle = "#FDFEFE80"
       this.ctx.fillRect(0, 0, this.ctx.canvas.width, this.ctx.canvas.height)
       this.ctx.fillStyle = "#000000"
       this.ctx.font="40pt Arial Black, bold"
-      this.ctx.fillText(`${this.char.name} win!!!`, 165, this.ctx.canvas.height/2)
+      this.ctx.fillText(`PLAYER 1 WINS!!!`, 290, this.ctx.canvas.height/2)
       this.stop()
     }
   }

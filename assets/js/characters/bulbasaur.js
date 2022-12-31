@@ -7,7 +7,7 @@ class Bulbasaur {
     this.velocity = 3
     this.totalEnergy = 280
     this.energy = 280
-    this.jumpForce = 6
+    this.jumpForce = 11
 
     this.img = "assets/images/characters/pikachuStandsRight.png"
     this.imgframes = 4    
@@ -19,6 +19,8 @@ class Bulbasaur {
 
     this.punchImage = new Image()
     this.punchImage.src = ""
+    this.punchImageRigth = "assets/images/characters/pikachu/punchRight.png"
+    this.punchImageLeft = "assets/images/characters/pikachu/punchLeft.png"
     this.punchPower = 10
 
     this.shootImage = "assets/images/characters/shoots/bicolorray.png"

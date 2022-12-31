@@ -8,7 +8,7 @@ class Player2 {
     this.vy = 0
     this.ax = 0
     this.ay = 0.5
-    this.floor = 250
+    this.floor = this.ctx.canvas.height * 0.75
     this.walkSide = "left"
     this.charIs = 
     this.img = new Image()
@@ -24,7 +24,7 @@ class Player2 {
     this.shoots = []    
     
     this.injuredImage = new Image()
-    this.injuredImage.src = "assets/images/characters/shoots/blood.png"
+    this.injuredImage.src = "assets/images/characters/blood.png"
   }
 
   draw() {
@@ -40,10 +40,15 @@ class Player2 {
       this.char.h,
     )
 
-    this.ctx.fillStyle = 'red'
-    this.ctx.fillRect(this.x, this.y - 20, 50, 3)
-    this.ctx.fillStyle = 'lime'
-    this.ctx.fillRect(this.x, this.y -20, (50 * (this.char.energy / this.char.totalEnergy)), 3)
+    this.ctx.fillStyle = 'lime';
+    if (this.char.energy < (this.char.totalEnergy / 4) * 3 && this.char.energy > (this.char.totalEnergy / 2)) {
+      this.ctx.fillStyle = 'yellow';
+    } else if (this.char.energy < this.char.totalEnergy / 2 && this.char.energy > (this.char.totalEnergy / 4)) {
+      this.ctx.fillStyle = 'orange';
+    } else if (this.char.energy <= (this.char.totalEnergy / 4)) {
+      this.ctx.fillStyle = 'red';
+    }
+    this.ctx.fillRect(this.x, this.y -20, (50 * (this.char.energy / this.char.totalEnergy)), 4)
 
     this.shoots.forEach(s => s.draw())
 
@@ -52,7 +57,7 @@ class Player2 {
     this.punchTime--
     if(this.punchTime > 0) {
       if (this.walkSide === "right") {
-        this.char.punchImage.src = "assets/images/characters/punchRight.png"
+        this.char.punchImage.src = this.char.punchImageRigth
         this.ctx.drawImage(
           this.char.punchImage,
           this.x + this.char.w / 2,
@@ -61,7 +66,7 @@ class Player2 {
           this.char.w / 2,
         )      
       } else if (this.walkSide === "left") {
-        this.char.punchImage.src = "assets/images/characters/punchLeft.png"
+        this.char.punchImage.src = this.char.punchImageLeft
         this.ctx.drawImage(
           this.char.punchImage,
           this.x - this.char.w / 2,

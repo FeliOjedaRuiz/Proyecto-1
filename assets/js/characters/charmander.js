@@ -7,7 +7,7 @@ class Charmander {
     this.velocity = 5
     this.totalEnergy = 230
     this.energy = 230
-    this.jumpForce = 9
+    this.jumpForce = 12
 
     this.img = "assets/images/characters/pikachuStandsRight.png"
     this.imgframes = 4    
@@ -19,6 +19,8 @@ class Charmander {
 
     this.punchImage = new Image()
     this.punchImage.src = ""
+    this.punchImageRigth = "assets/images/characters/pikachu/punchRight.png"
+    this.punchImageLeft = "assets/images/characters/pikachu/punchLeft.png"
     this.punchPower = 9
 
     this.shootImage = "assets/images/characters/shoots/bicolorray.png"

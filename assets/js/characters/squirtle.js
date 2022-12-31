@@ -7,7 +7,7 @@ class Squirtle {
     this.velocity = 4
     this.totalEnergy = 250
     this.energy = 250
-    this.jumpForce = 8
+    this.jumpForce = 12
 
     this.img = "assets/images/characters/pikachuStandsRight.png"
     this.imgframes = 4    
@@ -19,6 +19,8 @@ class Squirtle {
 
     this.punchImage = new Image()
     this.punchImage.src = ""
+    this.punchImageRigth = "assets/images/characters/pikachu/punchRight.png"
+    this.punchImageLeft = "assets/images/characters/pikachu/punchLeft.png"
     this.punchPower = 9
 
     this.shootImage = "assets/images/characters/shoots/bicolorray.png"

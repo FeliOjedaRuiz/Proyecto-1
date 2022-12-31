@@ -12,17 +12,19 @@ canvas {
   }
   
   .selectionScreen {
-    width: 720px;
-    height: 360px;
+    width: 1080px;
+    height: 540px;
     background-color: aqua;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-around;
   }
 
   .playerSelection {  
     background-color: blueviolet;
-    width: 720px;  
+    width: 1080px;
+    height: 300px;  
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -30,20 +32,30 @@ canvas {
   }
 
   .charImage {
-    width: 120px;
+    width: 150px;
   }
 
   h2 {
     text-align: center;
+    font-size: 30px;
+  }
+
+  .selectionScreen > h2 {
+    font-size: 45px;
   }
 
   h1 {
     text-align: center;
+    font-size: 60px;
     margin: 50px;
     color: white;
   }
 
   .start-btn {
-    width: 100px;
+    width: 150px;
+    height: 50px;
     margin: 20px;
+    font-size: 20px;
+    border: 2px solid black;
+    border-radius: 8px;
   }
