@@ -21,18 +21,19 @@ canvas {
     justify-content: space-around;
   }
 
-  .playerSelection {  
-    background-color: blueviolet;
-    width: 1080px;
-    height: 300px;  
+  .playerSelection {
+    border: 1px solid black;
+    width: 980px;
+    height: 280px;  
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
   }
 
   .charImage {
-    width: 150px;
+    width: 190px;
+    border-radius: 10px;
   }
 
   h2 {
@@ -42,6 +43,7 @@ canvas {
 
   .selectionScreen > h2 {
     font-size: 45px;
+    margin-bottom: 10px;
   }
 
   h1 {

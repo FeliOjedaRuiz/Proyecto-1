@@ -2,24 +2,24 @@ class Player2 {
   constructor(ctx, char) {
     this.ctx = ctx
     this.char = char    
-    this.x = (this.ctx.canvas.width - 60) - 52
+    this.x = (this.ctx.canvas.width - 60) - this.char.w
     this.y = 150
     this.vx = 0
     this.vy = 0
     this.ax = 0
     this.ay = 0.5
-    this.floor = this.ctx.canvas.height * 0.75
+    this.floor = this.ctx.canvas.height * 0.85
     this.walkSide = "left"
     this.charIs = 
     this.img = new Image()
-    this.img.src = `${this.char.img}`
+    this.img.src = `${this.char.slimage}`
     this.img.frames = this.char.imgframes
     this.img.frameIndex = 
     this.tick = 0  
         
     this.punchTime = 0
     this.punchit = 0
-
+    
     this.shootTime = 0
     this.shoots = []    
     
@@ -55,7 +55,7 @@ class Player2 {
     this.animate()
 
     this.punchTime--
-    if(this.punchTime > 0) {
+    if (this.punchTime > 0) {
       if (this.walkSide === "right") {
         this.char.punchImage.src = this.char.punchImageRigth
         this.ctx.drawImage(
@@ -81,7 +81,7 @@ class Player2 {
   animate() {
     this.tick++
     this.shootTime++
-    if (this.tick > 10) {
+    if (this.tick > 4) {
       this.tick = 0;
       this.img.frameIndex++
       if (this.img.frameIndex > this.img.frames - 1) {
@@ -96,10 +96,10 @@ class Player2 {
     this.x += this.vx
     this.y += this.vy
 
-    if (this.y >= this.floor) {
-      this.y = this.floor
+    if ((this.y + this.char.h) >= this.floor) {
+      this.y = this.floor - this.char.h
       this.vy = 0
-    } 0
+    }
 
     if (this.x <= 30) {
       this.vx = 0
@@ -115,7 +115,7 @@ class Player2 {
   }
 
   jump() {
-    if (this.y === this.floor) {
+    if (this.y === this.floor - this.char.h) {
       this.vy = -this.char.jumpForce
     }
   }
@@ -173,7 +173,7 @@ class Player2 {
   isInRange(player1){ 
     const p1 = player1
     if (this.walkSide === "right"){
-      if ((p1.x) >= this.x && (this.x + this.char.w + 20) >= p1.x
+      if ((p1.x) >= this.x && (this.x + this.char.w + this.char.w/2) >= p1.x
       && (this.y + this.char.h) >= p1.y && this.y <= (p1.y + p1.char.h) && this.punchit === 1) {
         this.punchit = 0
         p1.char.energy -= this.char.punchPower  
@@ -183,7 +183,7 @@ class Player2 {
         this.punchit = 0
       }
     } else if (this.walkSide === "left"){
-      if ((p1.x + p1.char.w) >= this.x -20 && (this.x) >= p1.x
+      if ((p1.x + p1.char.w) >= this.x - this.char.w/2 && (this.x) >= p1.x
       && (this.y + this.char.h) >= p1.y && this.y <= (p1.y + p1.char.h) && this.punchit === 1) {
         this.punchit = 0
         p1.char.energy -= this.char.punchPower
@@ -198,11 +198,13 @@ class Player2 {
   onKeyDown(key) {
     switch (key) {
       case RIGHT:
+        this.img.frames = 5
         this.img.src = `${this.char.wrimage}`
         this.walkSide = "right"
         this.vx = this.char.velocity
         break;
       case LEFT:
+        this.img.frames = 5
         this.img.src = `${this.char.wlimage}`
         this.walkSide = "left"
         this.vx = -this.char.velocity
@@ -216,10 +218,12 @@ class Player2 {
   onKeyUp(key) {
     switch (key) {
       case RIGHT:
+        this.img.frames = this.char.imgframes
         this.vx = 0
         this.img.src = `${this.char.srimage}`
         break;
       case LEFT:
+        this.img.frames = this.char.imgframes
         this.vx = 0
         this.img.src = `${this.char.slimage}`
         break;

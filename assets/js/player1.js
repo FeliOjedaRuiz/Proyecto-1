@@ -8,11 +8,11 @@ class Player1 {
     this.vy = 0
     this.ax = 0
     this.ay = 0.5
-    this.floor = this.ctx.canvas.height * 0.75
+    this.floor = this.ctx.canvas.height * 0.85
     this.walkSide = "right"
     this.charIs = 
     this.img = new Image()
-    this.img.src = `${this.char.img}`
+    this.img.src = `${this.char.srimage}`
     this.img.frames = this.char.imgframes
     this.img.frameIndex = 
     this.tick = 0  
@@ -84,8 +84,7 @@ class Player1 {
   animate() {
     this.tick++
     this.shootTime++
-
-    if (this.tick > 10) {
+    if (this.tick > 6) {
       this.tick = 0;
       this.img.frameIndex++
       if (this.img.frameIndex > this.img.frames - 1) {
@@ -100,10 +99,10 @@ class Player1 {
     this.x += this.vx
     this.y += this.vy
 
-    if (this.y >= this.floor) {
-      this.y = this.floor
+    if ((this.y + this.char.h) >= this.floor) {
+      this.y = this.floor - this.char.h
       this.vy = 0
-    } 0
+    } 
 
     if (this.x <= 30) {
       this.vx = 0
@@ -119,7 +118,7 @@ class Player1 {
   }
 
   jump() {
-    if (this.y === this.floor) {
+    if (this.y === this.floor - this.char.h) {
       this.vy = -this.char.jumpForce
     }
   }
@@ -202,11 +201,13 @@ class Player1 {
   onKeyDown(key) {
     switch (key) {
       case D:
+        this.img.frames = 5
         this.img.src = `${this.char.wrimage}`
         this.walkSide = "right"
         this.vx = this.char.velocity
         break;
       case A:
+        this.img.frames = 5
         this.img.src = `${this.char.wlimage}`
         this.walkSide = "left"
         this.vx = -this.char.velocity
@@ -220,10 +221,12 @@ class Player1 {
   onKeyUp(key) {
     switch (key) {
       case D:
+        this.img.frames = this.char.imgframes
         this.vx = 0
         this.img.src = `${this.char.srimage}`
         break;
       case A:
+        this.img.frames = this.char.imgframes
         this.vx = 0
         this.img.src = `${this.char.slimage}`
         break;
