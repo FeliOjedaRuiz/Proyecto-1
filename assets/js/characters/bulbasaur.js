@@ -9,7 +9,8 @@ class Bulbasaur {
     this.energy = 280
     this.jumpForce = 11
 
-    this.imgframes = 10         
+    this.imgframes = 10
+    this.walkImgFrames = 5        
     this.wrimage = "assets/images/characters/bulbasaur/bulbasaurWalkRight.png"
     this.wlimage = "assets/images/characters/bulbasaur/bulbasaurWalkLeft.png"
     this.srimage = "assets/images/characters/bulbasaur/bulbasaurStandsRight.png"

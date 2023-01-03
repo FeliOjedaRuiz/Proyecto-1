@@ -2,20 +2,19 @@ class Charmander {
   constructor(ctx) {
     this.ctx = ctx
     this.name = "Chandarmer"
-    this.w = 26 * 2
-    this.h = 29 * 2
-    this.velocity = 5
+    this.w = 46 * 1.5
+    this.h = 36 * 1.5
+    this.velocity = 4.5
     this.totalEnergy = 230
     this.energy = 230
     this.jumpForce = 12
-
-    this.img = "assets/images/characters/pikachuStandsRight.png"
-    this.imgframes = 4    
-         
-    this.wrimage = "assets/images/characters/pikachuWalkRight.png"
-    this.wlimage = "assets/images/characters/pikachuWalkLeft.png"
-    this.srimage = "assets/images/characters/pikachuStandsRight.png"
-    this.slimage = "assets/images/characters/pikachuStandsLeft.png"
+    
+    this.imgframes = 6
+    this.walkImgFrames = 8        
+    this.wrimage = "assets/images/characters/charmander/charmanderWlakRight.png"
+    this.wlimage = "assets/images/characters/charmander/charmanderWlakLeft.png"
+    this.srimage = "assets/images/characters/charmander/charmanderStandsRight.png"
+    this.slimage = "assets/images/characters/charmander/charmanderStandsLeft.png"
 
     this.punchImage = new Image()
     this.punchImage.src = ""

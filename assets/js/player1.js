@@ -84,7 +84,7 @@ class Player1 {
   animate() {
     this.tick++
     this.shootTime++
-    if (this.tick > 6) {
+    if (this.tick > 8) {
       this.tick = 0;
       this.img.frameIndex++
       if (this.img.frameIndex > this.img.frames - 1) {
@@ -201,13 +201,13 @@ class Player1 {
   onKeyDown(key) {
     switch (key) {
       case D:
-        this.img.frames = 5
+        this.img.frames = this.char.walkImgFrames
         this.img.src = `${this.char.wrimage}`
         this.walkSide = "right"
         this.vx = this.char.velocity
         break;
       case A:
-        this.img.frames = 5
+        this.img.frames = this.char.walkImgFrames
         this.img.src = `${this.char.wlimage}`
         this.walkSide = "left"
         this.vx = -this.char.velocity
