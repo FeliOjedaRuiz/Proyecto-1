@@ -6,7 +6,7 @@ const game = new Gamepvp(ctx)
 let charOnClickCount = 0
 
 
-
+const charSelScreen = document.getElementById("selectionScreen")
 const pvpbtn = document.getElementById("start-btn")
 const stopbtn = document.getElementById("stop-btn")
 const char1 = document.getElementById("char1")
@@ -66,6 +66,11 @@ char4.onclick = () =>{
 
 pvpbtn.onclick = () => {
   game.charDefine()
+  game.plataforms.push(new Plataform(ctx, 390, 345, 300, 25))
+  game.plataforms.push(new Plataform(ctx, 150, 245, 300, 25))
+  game.plataforms.push(new Plataform(ctx, 630, 245, 300, 25))
+  game.plataforms.push(new Plataform(ctx, 60, 420, 960, 150))
+  charSelScreen.style.display = 'none' 
   canvas.style.display = 'block'
   game.start()   
 }

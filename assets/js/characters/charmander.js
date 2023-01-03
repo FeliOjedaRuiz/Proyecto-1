@@ -22,10 +22,11 @@ class Charmander {
     this.punchImageLeft = "assets/images/characters/pikachu/punchLeft.png"
     this.punchPower = 9
 
-    this.shootImage = "assets/images/characters/shoots/bicolorray.png"
+    this.shootImageRight = "assets/images/characters/charmander/flamesRight.png"
+    this.shootImageLeft = "assets/images/characters/charmander/flamesLeft.png"
     this.shootAudio = new Audio("assets/audios/rayShoot.mp3")
     this.shootAudio.volume = 0.01
-    this.shootVel = 20
+    this.shootVel = 16
     this.shootPower = 1.3
   }
 

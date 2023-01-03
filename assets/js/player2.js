@@ -9,6 +9,7 @@ class Player2 {
     this.ax = 0
     this.ay = 0.5
     this.floor = this.ctx.canvas.height * 0.85
+    this.isInPlat = false
     this.walkSide = "left"
     this.charIs = 
     this.img = new Image()
@@ -115,7 +116,7 @@ class Player2 {
   }
 
   jump() {
-    if (this.y === this.floor - this.char.h) {
+    if (this.y === this.floor - this.char.h || this.isInPlat === true) {
       this.vy = -this.char.jumpForce
     }
   }
@@ -125,14 +126,14 @@ class Player2 {
       const x = this.x + this.char.w
       const y = this.y + this.char.h / 2
       const vx = this.char.shootVel
-      const imgsrc = this.char.shootImage
+      const imgsrc = this.char.shootImageRight
       const shoot = new Shoot(this.ctx, x, y, vx, imgsrc)
       this.shoots.push(shoot)
     } else if (this.walkSide === "left") {
       const x = this.x - this.char.w
       const y = this.y + this.char.h / 2
       const vx = -this.char.shootVel
-      const imgsrc = this.char.shootImage
+      const imgsrc = this.char.shootImageLeft
       const shoot = new Shoot(this.ctx, x, y, vx, imgsrc)
       this.shoots.push(shoot)
     }

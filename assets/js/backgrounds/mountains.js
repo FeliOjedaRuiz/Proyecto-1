@@ -10,13 +10,15 @@ class Mountains {
         this.vy = 0
 
         this.mountains = new Image()
-        this.mountains.src = "assets/images/backgrounds/mountains.png"  
+        this.mountains.src = "assets/images/backgrounds/mountains.png"
+        this.sky = new Image()
+        this.sky.src = "assets/images/backgrounds/sky.jpg"  
         
     }
 
     draw() {
+        this.ctx.drawImage(this.sky, this.x, this.y, this.w, this.h*2/3)
         this.ctx.drawImage(this.mountains, this.x, this.h/2, this.w, this.h/2)
-        this.ctx.drawImage(this.mountains, this.x + this.w, this.h/2, this.w, this.h/2)
     }
 
     move() {

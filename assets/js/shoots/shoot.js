@@ -13,7 +13,7 @@ class Shoot {
 
     this.img = new Image()
     this.img.src = imgsrc
-    this.img.frames = 2
+    this.img.frames = 4
     this.img.frameIndex = 0
     this.tick = 0
 
@@ -62,6 +62,4 @@ class Shoot {
   isVisible() {
     return this.x + this.w >= 0 && this.x <= this.ctx.canvas.width
   }
-
-
 }
