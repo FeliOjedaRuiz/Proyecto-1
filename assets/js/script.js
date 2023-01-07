@@ -3,7 +3,7 @@ const ctx = canvas.getContext("2d")
 
 const game = new Gamepvp(ctx)
 
-audio = new Audio("assets/audios/battlefield.mp3")
+audio = new Audio("assets/audios/selectScreenSound.mp3")
 audio.volume = 0.01
 
 
