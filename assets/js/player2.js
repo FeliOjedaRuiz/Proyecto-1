@@ -2,8 +2,8 @@ class Player2 {
   constructor(ctx, char) {
     this.ctx = ctx
     this.char = char    
-    this.x = (this.ctx.canvas.width - 80) - this.char.w
-    this.y = 150
+    this.x = (this.ctx.canvas.width - 130) - this.char.w
+    this.y = 230
     this.vx = 0
     this.vy = 0
     this.ax = 0

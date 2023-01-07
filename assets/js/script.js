@@ -155,6 +155,7 @@ pvpbtn.onclick = () => {
   canvas.style.display = 'block'
   pausebtn.style.visibility = 'visible'
   restartbtn.style.visibility = 'visible'
+  audio.pause()
   game.start()   
 }
 
