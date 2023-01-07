@@ -11,10 +11,16 @@
 
 <body>
   <div class="gameContainer" id="gameContainer">
-    <h1>POKEMÓN SMASH</h1>
+    
+    <div class="frontPage" id="frontPage">
+      <img src="assets/images/frontPage.png" alt="frontPageImage" class="frontPageImage">
+      <button id="play-btn" class="play-btn">PLAY</button>
+    </div>
+    
     <canvas id="canvaspvp" width="1080" height="540"></canvas>
 
     <div class="selectionScreen" id="selectionScreen">
+      <img src="assets/images/charSelBack.png" alt="charSelBackground" class="charSelBack">
       <h2 id="textPlayerSelct">Player 1 select character</h2>
       <div class="playerSelection" id="playerSelection">
         <div class="char" id="char1">
@@ -42,10 +48,16 @@
           <img class="charP2" id="char4P2" src="assets/images/P2.png" alt="charP2">
         </div>
       </div>
-      <button id="start-btn" class="start-btn">START PVP</button>
-    </div>   
+      <button id="start-btn" class="start-btn">START</button>
+    </div>
     
-    <button id="stop-btn" class="stop-btn">STOP</button>
+    
+    <div class="gameButtons">
+      <button id="pause-btn" class="pause-btn">PAUSE</button>
+      <button id="continue-btn" class="continue-btn">CONTINUE</button>
+      <button id="restart-btn" class="restart-btn">RESTART</button>
+    </div>
+    
   </div>
 
   <script src="assets/js/constants.js"></script>
@@ -58,7 +70,7 @@
   <script src="assets/js/player2.js"></script>
   <script src="assets/js/plataforms/floor.js"></script>
   <script src="assets/js/plataforms/plataforms.js"></script>
-  <script src="assets/js/backgrounds/mountains.js"></script>
+  <script src="assets/js/backgrounds/sky.js"></script>
   <script src="assets/js/gamepvp.js"></script>
   <script src="assets/js/script.js"></script>
 </body>

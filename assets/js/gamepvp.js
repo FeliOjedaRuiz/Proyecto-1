@@ -4,7 +4,7 @@ class Gamepvp {
     this.w = this.ctx.canvas.width
     this.h = this.ctx.canvas.height
     this.ctx.imageSmoothingEnabled = false;
-    this.escenario = new Mountains(ctx)
+    this.escenario = new Sky(ctx)
     this.plataforms = []
     this.player1 =
     this.player2 =
