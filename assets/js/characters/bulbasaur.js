@@ -2,11 +2,14 @@ class Bulbasaur {
   constructor(ctx) {
     this.ctx = ctx
     this.name = "Bulmasaur"
+    this.charImage = "assets/images/characters/charBulbasaur.png"
+    this.miniature = new Image()
+    this.miniature.src = ""
     this.w = 42 * 1.5
     this.h = 36 * 1.5
     this.velocity = 3.5
-    this.totalEnergy = 300
-    this.energy = 300
+    this.totalEnergy = 400
+    this.energy = 400
     this.jumpForce = 11
 
     this.imgframes = 10
@@ -20,7 +23,8 @@ class Bulbasaur {
     this.punchImage.src = ""
     this.punchImageRigth = "assets/images/characters/pikachu/punchRight.png"
     this.punchImageLeft = "assets/images/characters/pikachu/punchLeft.png"
-    this.punchPower = 10
+    this.punchPower = 11
+    this.punchVel = 20
 
     this.shootImageRight = "assets/images/characters/bulbasaur/hojaNavaja.png"
     this.shootImageLeft = "assets/images/characters/bulbasaur/hojaNavaja.png"

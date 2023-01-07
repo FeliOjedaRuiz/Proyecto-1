@@ -15,23 +15,31 @@
     <canvas id="canvaspvp" width="1080" height="540"></canvas>
 
     <div class="selectionScreen" id="selectionScreen">
-      <h2>Player 1 select character</h2>
+      <h2 id="textPlayerSelct">Player 1 select character</h2>
       <div class="playerSelection" id="playerSelection">
-        <div class="char1" id="char1">
+        <div class="char" id="char1">
           <h2>Pikachu</h2>
-          <img class="charImage" src="assets/images/charPikachu.png" alt="char1">
+          <img class="charImage" src="assets/images/characters/charPikachu.png" alt="char1">
+          <img class="charP1" id="char1P1" src="assets/images/P1.png" alt="charP1">
+          <img class="charP2" id="char1P2" src="assets/images/P2.png" alt="charP2">
         </div>
-        <div class="char2" id="char2">
+        <div class="char" id="char2">
           <h2>Bulbasaur</h2>
-          <img class="charImage" src="assets/images/charBulbasaur.png" alt="char2">
+          <img class="charImage" src="assets/images/characters/charBulbasaur.png" alt="char2">
+          <img class="charP1" id="char2P1" src="assets/images/P1.png" alt="charP1">
+          <img class="charP2" id="char2P2" src="assets/images/P2.png" alt="charP2">
         </div>
-        <div class="char3" id="char3">
+        <div class="char" id="char3">
           <h2>Charmander</h2>
-          <img class="charImage" src="assets/images/charCharmander.png" alt="char3">
+          <img class="charImage" src="assets/images/characters/charCharmander.png" alt="char3">
+          <img class="charP1" id="char3P1" src="assets/images/P1.png" alt="charP1">
+          <img class="charP2" id="char3P2" src="assets/images/P2.png" alt="charP2">          
         </div>
-        <div class="char4" id="char4">
+        <div class="char" id="char4">
           <h2>Squirtle</h2>
-          <img class="charImage" src="assets/images/charSquirtle.png" alt="char4">
+          <img class="charImage" src="assets/images/characters/charSquirtle.png" alt="char4">
+          <img class="charP1" id="char4P1" src="assets/images/P1.png" alt="charP1">
+          <img class="charP2" id="char4P2" src="assets/images/P2.png" alt="charP2">
         </div>
       </div>
       <button id="start-btn" class="start-btn">START PVP</button>
@@ -48,6 +56,7 @@
   <script src="assets/js/characters/pikachu.js"></script>
   <script src="assets/js/player1.js"></script>
   <script src="assets/js/player2.js"></script>
+  <script src="assets/js/plataforms/floor.js"></script>
   <script src="assets/js/plataforms/plataforms.js"></script>
   <script src="assets/js/backgrounds/mountains.js"></script>
   <script src="assets/js/gamepvp.js"></script>

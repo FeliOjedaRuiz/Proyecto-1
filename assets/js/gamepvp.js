@@ -7,8 +7,8 @@ class Gamepvp {
     this.escenario = new Mountains(ctx)
     this.plataforms = []
     this.player1 =
-      this.player2 =
-      this.p1 = ""
+    this.player2 =
+    this.p1 = ""
     this.p2 = ""
 
     this.audio = new Audio("assets/audios/battlefield.mp3")
@@ -100,19 +100,19 @@ class Gamepvp {
     p2.isInPlat = false
     const plat = this.plataforms;
     this.plataforms.forEach(plat => {
-      if ((p1.y + p1.char.h) >= plat.y && (p1.y + p1.char.h) <= (plat.y + plat.h) && p1.x + p1.char.w/2 >= plat.x && p1.x + p1.char.w/2 <= (plat.x + plat.w)) {
+      if ((p1.y + p1.char.h - 2) >= plat.y && (p1.y + p1.char.h) <= (plat.y + plat.h) && p1.x + p1.char.w/2 >= plat.x && p1.x + p1.char.w/2 <= (plat.x + plat.w)) {
         if (p1.vy >= 0) {
           p1.isInPlat = true
-          p1.y = (plat.y - p1.char.h) 
+          p1.y = (plat.y - p1.char.h + 3) 
           p1.vy = 0
         }
       }
     })
     this.plataforms.forEach(plat => {
-      if ((p2.y + p2.char.h) >= plat.y && (p2.y + p2.char.h) <= (plat.y + plat.h) && p2.x + p2.char.w/2 >= plat.x && p2.x + p2.char.w/2 <= (plat.x + plat.w)) {
+      if ((p2.y + p2.char.h - 2) >= plat.y && (p2.y + p2.char.h) <= (plat.y + plat.h) && p2.x + p2.char.w/2 >= plat.x && p2.x + p2.char.w/2 <= (plat.x + plat.w)) {
         if (p2.vy >= 0) {
           p2.isInPlat = true
-          p2.y = (plat.y - p2.char.h) 
+          p2.y = (plat.y - p2.char.h + 3) 
           p2.vy = 0
         }
       }

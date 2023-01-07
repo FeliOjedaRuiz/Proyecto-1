@@ -2,13 +2,13 @@ class Player1 {
   constructor(ctx, char) {
     this.ctx = ctx
     this.char = char
-    this.x = 60
+    this.x = 80
     this.y = 150
     this.vx = 0
     this.vy = 0
     this.ax = 0
     this.ay = 0.5
-    this.floor = this.ctx.canvas.height * 0.85
+    this.floor = this.ctx.canvas.height * 0.98
     this.isInPlat = false
     this.walkSide = "right"
     this.charIs = 
@@ -98,18 +98,17 @@ class Player1 {
     this.y += this.vy
 
     if ((this.y + this.char.h) >= this.floor) {
-      this.y = this.floor - this.char.h
-      this.vy = 0
+      this.char.energy = 0
     } 
 
-    if (this.x <= 30) {
+    if (this.x <= 10) {
       this.vx = 0
-      this.x = 30
+      this.x = 10
     }
 
-    if (this.x + this.char.w >= this.ctx.canvas.width - 30) {
+    if (this.x + this.char.w >= this.ctx.canvas.width - 10) {
       this.vx = 0
-      this.x = this.ctx.canvas.width - this.char.w - 30
+      this.x = this.ctx.canvas.width - this.char.w - 10
     }
 
     this.shoots.forEach(s => s.move())
@@ -140,7 +139,7 @@ class Player1 {
   }
 
   punch() {
-    this.punchTime = 10
+    this.punchTime = this.char.punchVel
     this.punchit = 1    
   }
 
@@ -177,6 +176,13 @@ class Player1 {
       if ((p2.x) >= this.x && (this.x + this.char.w + this.char.w/2) >= p2.x
       && (this.y + this.char.h) >= p2.y && this.y <= (p2.y + p2.char.h) && this.punchit === 1) {
         this.punchit = 0
+        this.ctx.drawImage(
+          p2.injuredImage,
+          p2.x,
+          p2.y,
+          p2.char.w,
+          p2.char.h,
+        )
         p2.char.energy -= this.char.punchPower  
         p2.x += this.char.punchPower  
         p2.y -= this.char.punchPower    
@@ -187,6 +193,13 @@ class Player1 {
       if ((p2.x + p2.char.w) >= this.x - this.char.w/2 && (this.x) >= p2.x
       && (this.y + this.char.h) >= p2.y && this.y <= (p2.y + p2.char.h) && this.punchit === 1) {
         this.punchit = 0
+        this.ctx.drawImage(
+          p2.injuredImage,
+          p2.x,
+          p2.y,
+          p2.char.w,
+          p2.char.h,
+        )
         p2.char.energy -= this.char.punchPower
         p2.x -= this.char.punchPower
         p2.y -= this.char.punchPower       

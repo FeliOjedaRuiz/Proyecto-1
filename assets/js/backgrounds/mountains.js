@@ -17,8 +17,8 @@ class Mountains {
     }
 
     draw() {
-        this.ctx.drawImage(this.sky, this.x, this.y, this.w, this.h*2/3)
-        this.ctx.drawImage(this.mountains, this.x, this.h/2, this.w, this.h/2)
+        this.ctx.drawImage(this.sky, this.x, this.y, this.w, this.h)
+        
     }
 
     move() {

@@ -30,13 +30,23 @@ canvas {
     align-items: center;
   }
 
+  .char {
+    position: relative;
+  } 
+
   .charImage {
     width: 190px;
     border-radius: 10px;
     border-top: 5px solid black;
     border-left: 5px solid black;
     border-right: 5px solid black;
-    border-bottom: 5px solid black;
+    border-bottom: 5px solid black;    
+  }
+
+  .charP1, .charP2 {
+    position: absolute;
+    left: 0px;
+    display: inline;     
   }
 
   h2 {
@@ -63,4 +73,8 @@ canvas {
     font-size: 20px;
     border: 2px solid black;
     border-radius: 8px;
+  }
+
+  #textPlayerSelct {
+    color: red;
   }

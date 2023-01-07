@@ -2,11 +2,14 @@ class Pikachu {
   constructor(ctx) {
     this.ctx = ctx
     this.name = "Pichaku"
+    this.charImage = "assets/images/characters/charPikachu.png"
+    this.miniature = new Image()
+    this.miniature.src = ""
     this.w = 57
     this.h = 47
     this.velocity = 7
-    this.totalEnergy = 200
-    this.energy = 200
+    this.totalEnergy = 300
+    this.energy = 300
     this.jumpForce = 13
 
     this.imgframes = 8
@@ -21,6 +24,7 @@ class Pikachu {
     this.punchImageRigth = "assets/images/characters/pikachu/punchRight.png"
     this.punchImageLeft = "assets/images/characters/pikachu/punchLeft.png"
     this.punchPower = 8
+    this.punchVel = 8
 
     this.shootImageRight = "assets/images/characters/pikachu/bicolorRay.png"
     this.shootImageLeft = "assets/images/characters/pikachu/bicolorRay.png"
