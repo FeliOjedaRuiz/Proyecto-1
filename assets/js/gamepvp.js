@@ -128,6 +128,7 @@ class Gamepvp {
       this.ctx.font = "40pt Arial Black, bold"
       this.ctx.fillText(`PLAYER 2 WINS!!!`, 290, this.ctx.canvas.height / 2)
       this.stop()
+      pausebtn.style.visibility = 'hidden'
     } else if (this.player2.char.energy <= 0) {
       this.ctx.fillStyle = "#FDFEFE80"
       this.ctx.fillRect(0, 0, this.ctx.canvas.width, this.ctx.canvas.height)
@@ -135,6 +136,7 @@ class Gamepvp {
       this.ctx.font = "40pt Arial Black, bold"
       this.ctx.fillText(`PLAYER 1 WINS!!!`, 290, this.ctx.canvas.height / 2)
       this.stop()
+      pausebtn.style.visibility = 'hidden'
     }
   }
 
