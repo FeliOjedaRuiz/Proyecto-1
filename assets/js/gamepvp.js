@@ -12,7 +12,7 @@ class Gamepvp {
     this.p2 = ""
 
     this.audio = new Audio("assets/audios/battlefield.mp3")
-    this.audio.volume = 0.01
+    this.audio.volume = 0.1
 
     this.winAudio = new Audio("assets/audios/winSound.mp3")
     this.winAudio.volume = 0.1

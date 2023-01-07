@@ -29,7 +29,7 @@ class Pikachu {
     this.shootImageRight = "assets/images/characters/pikachu/bicolorRay.png"
     this.shootImageLeft = "assets/images/characters/pikachu/bicolorRay.png"
     this.shootAudio = new Audio("assets/audios/rayShoot.mp3")
-    this.shootAudio.volume = 0.01
+    this.shootAudio.volume = 0.1
     this.shootVel = 25
     this.shootPower = 1.5
   }

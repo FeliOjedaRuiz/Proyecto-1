@@ -29,7 +29,7 @@ class Charmander {
     this.shootImageRight = "assets/images/characters/charmander/flamesRight.png"
     this.shootImageLeft = "assets/images/characters/charmander/flamesLeft.png"
     this.shootAudio = new Audio("assets/audios/rayShoot.mp3")
-    this.shootAudio.volume = 0.01
+    this.shootAudio.volume = 0.1
     this.shootVel = 16
     this.shootPower = 1.3
   }

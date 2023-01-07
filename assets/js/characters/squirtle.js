@@ -29,7 +29,7 @@ class Squirtle {
     this.shootImageRight = "assets/images/characters/squirtle/burbujasRight.png"
     this.shootImageLeft = "assets/images/characters/squirtle/burbujasLeft.png"
     this.shootAudio = new Audio("assets/audios/rayShoot.mp3")
-    this.shootAudio.volume = 0.01
+    this.shootAudio.volume = 0.1
     this.shootVel = 12
     this.shootPower = 1
   }
