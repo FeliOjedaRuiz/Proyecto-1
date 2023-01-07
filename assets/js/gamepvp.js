@@ -14,6 +14,9 @@ class Gamepvp {
     this.audio = new Audio("assets/audios/battlefield.mp3")
     this.audio.volume = 0.01
 
+    this.winAudio = new Audio("assets/audios/winSound.mp3")
+    this.winAudio.volume = 0.1
+
   }
 
   charDefine() {
@@ -127,8 +130,9 @@ class Gamepvp {
       this.ctx.fillStyle = "#000000"
       this.ctx.font = "40pt Arial Black, bold"
       this.ctx.fillText(`PLAYER 2 WINS!!!`, 290, this.ctx.canvas.height / 2)
-      this.stop()
+      this.stop()    
       pausebtn.style.visibility = 'hidden'
+      this.winAudio.play()
     } else if (this.player2.char.energy <= 0) {
       this.ctx.fillStyle = "#FDFEFE80"
       this.ctx.fillRect(0, 0, this.ctx.canvas.width, this.ctx.canvas.height)
@@ -137,7 +141,9 @@ class Gamepvp {
       this.ctx.fillText(`PLAYER 1 WINS!!!`, 290, this.ctx.canvas.height / 2)
       this.stop()
       pausebtn.style.visibility = 'hidden'
+      this.winAudio.play()
     }
+  
   }
 
 }

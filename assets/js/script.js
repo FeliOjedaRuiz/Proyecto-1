@@ -3,8 +3,8 @@ const ctx = canvas.getContext("2d")
 
 const game = new Gamepvp(ctx)
 
-audio = new Audio("assets/audios/selectScreenSound.mp3")
-audio.volume = 0.01
+audio = new Audio("assets/audios/pokemon-intro.mp3")
+audio.volume = 0.1
 
 
 const playbtn = document.getElementById("play-btn")
