@@ -8,8 +8,8 @@ class Charmander {
     this.w = 46 * 1.5
     this.h = 36 * 1.5
     this.velocity = 4.5
-    this.totalEnergy = 330
-    this.energy = 330
+    this.totalEnergy = 350
+    this.energy = 350
     this.jumpForce = 12
     
     this.imgframes = 6
@@ -28,8 +28,8 @@ class Charmander {
 
     this.shootImageRight = "assets/images/characters/charmander/flamesRight.png"
     this.shootImageLeft = "assets/images/characters/charmander/flamesLeft.png"
-    this.shootAudio = new Audio("assets/audios/rayShoot.mp3")
-    this.shootAudio.volume = 0.1
+    this.shootAudio = new Audio("assets/audios/fireBall.mp3")
+    this.shootAudio.volume = 0.5
     this.shootVel = 16
     this.shootPower = 1.3
   }

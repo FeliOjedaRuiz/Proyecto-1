@@ -8,8 +8,8 @@ class Pikachu {
     this.w = 57
     this.h = 47
     this.velocity = 7
-    this.totalEnergy = 300
-    this.energy = 300
+    this.totalEnergy = 320
+    this.energy = 320
     this.jumpForce = 13
 
     this.imgframes = 8
@@ -29,7 +29,7 @@ class Pikachu {
     this.shootImageRight = "assets/images/characters/pikachu/bicolorRay.png"
     this.shootImageLeft = "assets/images/characters/pikachu/bicolorRay.png"
     this.shootAudio = new Audio("assets/audios/rayShoot.mp3")
-    this.shootAudio.volume = 0.1
+    this.shootAudio.volume = 0.3
     this.shootVel = 25
     this.shootPower = 1.5
   }

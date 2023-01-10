@@ -8,8 +8,8 @@ class Squirtle {
     this.w = 43 * 1.5
     this.h = 40 * 1.5
     this.velocity = 4
-    this.totalEnergy = 360
-    this.energy = 360
+    this.totalEnergy = 380
+    this.energy = 380
     this.jumpForce = 12
 
     this.imgframes = 6
@@ -28,8 +28,8 @@ class Squirtle {
 
     this.shootImageRight = "assets/images/characters/squirtle/burbujasRight.png"
     this.shootImageLeft = "assets/images/characters/squirtle/burbujasLeft.png"
-    this.shootAudio = new Audio("assets/audios/rayShoot.mp3")
-    this.shootAudio.volume = 0.1
+    this.shootAudio = new Audio("assets/audios/burbujas.mp3")
+    this.shootAudio.volume = 0.5
     this.shootVel = 12
     this.shootPower = 1
   }

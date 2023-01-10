@@ -176,13 +176,6 @@ class Player1 {
       if ((p2.x) >= this.x && (this.x + this.char.w + this.char.w/2) >= p2.x
       && (this.y + this.char.h) >= p2.y && this.y <= (p2.y + p2.char.h) && this.punchit === 1) {
         this.punchit = 0
-        this.ctx.drawImage(
-          p2.injuredImage,
-          p2.x,
-          p2.y,
-          p2.char.w,
-          p2.char.h,
-        )
         p2.char.energy -= this.char.punchPower  
         p2.x += this.char.punchPower  
         p2.y -= this.char.punchPower    
@@ -193,13 +186,6 @@ class Player1 {
       if ((p2.x + p2.char.w) >= this.x - this.char.w/2 && (this.x) >= p2.x
       && (this.y + this.char.h) >= p2.y && this.y <= (p2.y + p2.char.h) && this.punchit === 1) {
         this.punchit = 0
-        this.ctx.drawImage(
-          p2.injuredImage,
-          p2.x,
-          p2.y,
-          p2.char.w,
-          p2.char.h,
-        )
         p2.char.energy -= this.char.punchPower
         p2.x -= this.char.punchPower
         p2.y -= this.char.punchPower       

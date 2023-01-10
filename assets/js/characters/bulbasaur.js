@@ -28,8 +28,8 @@ class Bulbasaur {
 
     this.shootImageRight = "assets/images/characters/bulbasaur/hojaNavaja.png"
     this.shootImageLeft = "assets/images/characters/bulbasaur/hojaNavaja.png"
-    this.shootAudio = new Audio("assets/audios/rayShoot.mp3")
-    this.shootAudio.volume = 0.1
+    this.shootAudio = new Audio("assets/audios/hojaNavaja.mp3")
+    this.shootAudio.volume = 0.5
     this.shootVel = 16
     this.shootPower = 1.3
   }
