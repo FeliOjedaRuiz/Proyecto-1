@@ -241,7 +241,7 @@ class Player2 {
         this.vx = 0
         this.img.src = `${this.char.slimage}`
         break;
-      case FIN:
+      case CERO:
         if (this.shootTime > 25) {
           this.shootTime = 0
           this.char.shootAudio.load()
@@ -249,7 +249,7 @@ class Player2 {
           this.char.shootAudio.play()
         }
         break;
-      case DOWN:
+      case PUNTO:
         this.punch()        
         break;
     }
